@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/nav_graph"
+            app:startDestination="@id/songListFragment">
+
+    <fragment
+            android:id="@+id/songListFragment"
+            android:name="com.example.firstapplication.SongListFragment"
+            android:label="song List Fragment">
+        <action
+                android:id="@+id/action_songListFragment_to_songDetailFragment"
+                app:destination="@id/songDetailFragment" />
+    </fragment>
+
+    <fragment
+            android:id="@+id/songDetailFragment"
+            android:name="com.example.firstapplication.SongDetailFragment"
+            android:label="song Detail Fragment">
+        <action
+                android:id="@+id/action_songDetailFragment_to_songListFragment"
+                app:destination="@id/songListFragment"/>
+        <argument
+                android:name="Title"
+                app:argType="string"/>
+        <argument
+                android:name="Description"
+                app:argType="string"/>
+        <argument
+                android:name="Image"
+                app:argType="integer"/>
+    </fragment>
+</navigation>
